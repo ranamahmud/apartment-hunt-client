@@ -1,9 +1,10 @@
 import React from 'react';
+import AdminHeader from '../../common/AdminHeader/AdminHeader';
 
 const BookingList = () => {
     return (
         <div>
-            <h1>Booking List</h1>
+            <AdminHeader title="Booking List" />
         </div>
     );
 };
