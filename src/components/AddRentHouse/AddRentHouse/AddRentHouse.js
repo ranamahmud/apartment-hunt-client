@@ -3,7 +3,7 @@ import { useAlert } from 'react-alert';
 import { Image, Form, Col, Row } from 'react-bootstrap';
 import AdminHeader from '../../common/AdminHeader/AdminHeader';
 import AdminSidebar from '../../common/AdminSidebar/AdminSidebar';
-
+import "./AddRentHouse.css"
 const AddRentHouse = () => {
     const alert = useAlert()
     const [serviceInfo, setInfo] = useState({});
@@ -59,10 +59,18 @@ const AddRentHouse = () => {
             <div className="container-fluid row">
 
                 <AdminSidebar />
-                <div className="col-md-10 col-sm-12 col-12 d-flex">
-                    <form id="service-form" className="form-group" id="add-service" onSubmit={handleSubmit}
+                <div className="col-md-10 col-sm-12 col-12 d-flex"
+                // style={{
+                //     backgroundColor: "#F4F7FC",
+
+                // }}
+                >
+                    <form id="service-form" className="form-group" id="add-house" onSubmit={handleSubmit}
                         style={{
                             width: '100%',
+                            backgroundColor: "white",
+                            borderRadius: '20px',
+                            padding: '40px'
                         }}
                     >
                         <Row>
@@ -87,7 +95,7 @@ const AddRentHouse = () => {
 
                                 <Form.Group controlId="formBasicBedroom">
                                     <Form.Label >No of Bathroom</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter No of Bathroom"
+                                    <Form.Control type="number" placeholder="Enter No of Bathroom"
                                         onBlur={handleBlur}
                                         required
                                         name="noBathroom"
@@ -97,7 +105,7 @@ const AddRentHouse = () => {
                             <Col md={5}>
                                 <Form.Group controlId="formBasicPrice">
                                     <Form.Label >Price</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter Price"
+                                    <Form.Control type="number" placeholder="Enter Price"
                                         onBlur={handleBlur}
                                         required
                                         name="price"
@@ -105,20 +113,18 @@ const AddRentHouse = () => {
                                 </Form.Group>
                                 <Form.Group controlId="formBasicBedroom">
                                     <Form.Label >No of Bedroom</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter No of Bedroom"
+                                    <Form.Control type="number" placeholder="Enter No of Bedroom"
                                         onBlur={handleBlur}
                                         required
                                         name="noBedroom"
                                     />
                                 </Form.Group>
 
-                                <div
-                                    id="upload-img-form"
-                                >
-                                    <div className="custom-file"
-                                    >
+                                <div id="upload-img-form">
+                                    <p id="thumbnail-text">Thumbnail</p>
+                                    <div className="custom-file">
                                         <label id="upload-btn-img" className="custom-file-label" htmlFor="customFile"
-                                        ><Image src={require('../../../../src/images/icons/cloud-upload-outline.png')}
+                                        ><Image src={require('../../../../src/images/icons/cloud-upload-outline.png').default}
                                             style={{ width: "24px", height: "24px" }}
                                             />Upload image</label>
                                         <input type="file"
