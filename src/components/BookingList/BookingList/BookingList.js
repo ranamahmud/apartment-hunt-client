@@ -9,7 +9,7 @@ const BookingList = () => {
     const [userService, setUserService] = useState([])
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     useEffect(() => {
-        fetch('https://creative-agency-service.herokuapp.com/orders')
+        fetch('https://apartment-hunt1.herokuapp.com/getAllBookings/')
             .then(res => res.json())
             .then(data => setUserService(data))
     }, [])
@@ -24,11 +24,11 @@ const BookingList = () => {
         e.target.style.color = colors[status]
         updateOrder(id, status)
     };
-
+    // https://apartment-hunt1.herokuapp.com/getAllBookings/def@gmail.com
 
     const updateOrder = (id, status) => {
         const order = { status };
-        fetch('https://creative-agency-service.herokuapp.com/updateOrders/' + id, {
+        fetch('https://apartment-hunt1.herokuapp.com/getAllBookings/' + id, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(order)
@@ -59,10 +59,8 @@ const BookingList = () => {
                             <thead>
                                 <tr>
                                     <th className="text-secondary" scope="col">Name</th>
-
                                     <th className="text-secondary" scope="col">Email ID</th>
                                     <th className="text-secondary" scope="col">Phone No</th>
-
                                     <th className="text-secondary" scope="col">Message</th>
                                     <th className="text-secondary" scope="col">Status</th>
 
@@ -72,12 +70,14 @@ const BookingList = () => {
                         <div>
                             <tbody>
                                 {
+
                                     userService.map((service) =>
 
                                         <tr key={service._id}>
-                                            <td style={{ width: "150px" }}>{service.userName}</td>
+                                            <td style={{ width: "150px" }}>{service.fullName}</td>
                                             <td style={{ width: "130px" }}>{service.email}</td>
-                                            <td style={{ width: "150px" }}>{service.name}</td>
+                                            <td style={{ width: "150px" }}>{service.phoneNumber}</td>
+                                            <td style={{ width: "150px" }}>{service.message}</td>
                                             <td>{service.details}</td>
                                             <td style={{ width: "200px" }}>
                                                 <select className="custom-select" id="inputGroupSelect01"

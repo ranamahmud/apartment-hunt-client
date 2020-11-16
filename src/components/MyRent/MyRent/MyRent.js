@@ -5,7 +5,7 @@ import AdminSidebar from '../../common/AdminSidebar/AdminSidebar';
 const MyRent = () => {
     return (
         <section>
-            <AdminHeader title="Booking List" />
+            <AdminHeader title="My Rent" />
             <div className="container-fluid row">
 
                 <AdminSidebar />
