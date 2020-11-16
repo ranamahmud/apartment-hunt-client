@@ -26,11 +26,13 @@ const AddRentHouse = () => {
 
         } else {
             formData.append('file', file);
-            formData.append('userName', serviceInfo.userName);
+            formData.append('serviceTitle', serviceInfo.serviceTitle);
+            formData.append('price', serviceInfo.price);
             formData.append('email', serviceInfo.email);
-            formData.append('name', serviceInfo.name);
-            formData.append('detail', serviceInfo.detail);
-            fetch('https://creative-agency-service.herokuapp.com/addService', {
+            formData.append('location', serviceInfo.location);
+            formData.append('noBedroom', serviceInfo.noBedroom);
+            formData.append('noBathroom', serviceInfo.noBathroom);
+            fetch('https://apartment-hunt1.herokuapp.com/addHouse', {
                 method: 'POST',
                 body: formData
             })
@@ -48,7 +50,7 @@ const AddRentHouse = () => {
                 })
 
         }
-
+        console.log({ formData });
         e.preventDefault()
     }
     return (
@@ -64,49 +66,49 @@ const AddRentHouse = () => {
                         }}
                     >
                         <Row>
-                            <Col md={5}>  <Form.Group controlId="formBasicEmail">
+                            <Col md={5}>  <Form.Group controlId="formBasicTitle">
                                 <Form.Label >Service Title</Form.Label>
-                                <Form.Control type="text" placeholder="Enter title"
+                                <Form.Control type="text" placeholder="Enter Title"
                                     onBlur={handleBlur}
                                     required
-                                    name="name"
+                                    name="serviceTitle"
                                 />
                             </Form.Group>
-                                <Form.Group controlId="formBasicEmail">
+                                <Form.Group controlId="formBasicLocation">
                                     <Form.Label >Location</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter title"
+                                    <Form.Control type="text" placeholder="Enter Location"
                                         onBlur={handleBlur}
                                         required
-                                        name="name"
+                                        name="location"
                                     />
                                 </Form.Group>
 
 
 
-                                <Form.Group controlId="formBasicEmail">
+                                <Form.Group controlId="formBasicBedroom">
                                     <Form.Label >No of Bathroom</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter title"
+                                    <Form.Control type="text" placeholder="Enter No of Bathroom"
                                         onBlur={handleBlur}
                                         required
-                                        name="name"
+                                        name="noBathroom"
                                     />
                                 </Form.Group>
                             </Col>
                             <Col md={5}>
-                                <Form.Group controlId="formBasicEmail">
+                                <Form.Group controlId="formBasicPrice">
                                     <Form.Label >Price</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter title"
+                                    <Form.Control type="text" placeholder="Enter Price"
                                         onBlur={handleBlur}
                                         required
-                                        name="name"
+                                        name="price"
                                     />
                                 </Form.Group>
-                                <Form.Group controlId="formBasicEmail">
+                                <Form.Group controlId="formBasicBedroom">
                                     <Form.Label >No of Bedroom</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter title"
+                                    <Form.Control type="text" placeholder="Enter No of Bedroom"
                                         onBlur={handleBlur}
                                         required
-                                        name="name"
+                                        name="noBedroom"
                                     />
                                 </Form.Group>
 
