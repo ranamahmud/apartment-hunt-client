@@ -58,9 +58,13 @@ const AddRentHouse = () => {
 
                 <AdminSidebar />
                 <div className="col-md-10 col-sm-12 col-12 d-flex">
-                    <form id="service-form" className="form-group" id="add-service" onSubmit={handleSubmit}>
+                    <form id="service-form" className="form-group" id="add-service" onSubmit={handleSubmit}
+                        style={{
+                            width: '100%',
+                        }}
+                    >
                         <Row>
-                            <Col>  <Form.Group controlId="formBasicEmail">
+                            <Col md={5}>  <Form.Group controlId="formBasicEmail">
                                 <Form.Label >Service Title</Form.Label>
                                 <Form.Control type="text" placeholder="Enter title"
                                     onBlur={handleBlur}
@@ -88,7 +92,7 @@ const AddRentHouse = () => {
                                     />
                                 </Form.Group>
                             </Col>
-                            <Col>
+                            <Col md={5}>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Label >Price</Form.Label>
                                     <Form.Control type="text" placeholder="Enter title"
