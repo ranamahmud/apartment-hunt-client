@@ -4,13 +4,13 @@ import AdminSidebar from '../../common/AdminSidebar/AdminSidebar';
 
 const BookingList = () => {
     return (
-        <div>
+        <section>
             <AdminHeader title="Booking List" />
             <div className="container-fluid row">
 
                 <AdminSidebar />
             </div>
-        </div>
+        </section>
     );
 };
 

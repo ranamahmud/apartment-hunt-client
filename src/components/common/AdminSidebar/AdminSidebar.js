@@ -27,7 +27,7 @@ const AdminSidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/review" >
+                            <Link to="/my-rent" >
                                 <Image src={require('../../../images/icons/home.png').default} /> <span>My Rent</span>
                             </Link>
                         </li>

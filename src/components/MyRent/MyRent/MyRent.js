@@ -1,10 +1,16 @@
 import React from 'react';
+import AdminHeader from '../../common/AdminHeader/AdminHeader';
+import AdminSidebar from '../../common/AdminSidebar/AdminSidebar';
 
 const MyRent = () => {
     return (
-        <div>
-            <h1>My Rent</h1>
-        </div>
+        <section>
+            <AdminHeader title="Booking List" />
+            <div className="container-fluid row">
+
+                <AdminSidebar />
+            </div>
+        </section>
     );
 };
 
