@@ -14,7 +14,7 @@ const Header = () => {
                     <Nav.Link href="#home">Service</Nav.Link>
                     <Nav.Link href="#home">Concerns</Nav.Link>
                     <Nav.Link href="#home">Event</Nav.Link>
-                    <Nav.Link href="#home">Contact</Nav.Link>
+                    <Nav.Link href="#contact">Contact</Nav.Link>
                     <Link className="nav-link text-white" to="/login">
                         <Button variant="dark" id="login-btn">Login</Button>
                     </Link>
