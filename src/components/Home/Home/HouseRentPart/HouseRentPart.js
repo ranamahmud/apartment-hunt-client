@@ -28,26 +28,21 @@ const HouseRentPart = () => {
                 </Col>
             </Row>
                     <div>
-                    {(loading === false ? (<div>
-            {houseRent.map((houseData) => (
-                    <HouseRentPartCard key={houseData._id} houseData={houseData}>
-                       
-                    </HouseRentPartCard>
-                ))}
-                </div>): (<div>
-                    <h6 className = 'text-center'>Loading</h6>
-                </div>))}
+                            {(loading === false ? 
+                                (
+                                    <div> 
+                                        {houseRent.map((houseData) => (
+                                            <HouseRentPartCard key={houseData._id} houseData={houseData}>
+                                            </HouseRentPartCard>
+                                        ))}
+                                </div>
+                            
+                            ): (<div>
+                                <h6 className = 'text-center'>Loading</h6>
+                        </div>))}
                     </div>
                 </div>
-        </Container>
-    
-    
-
-       
- 
-
-        
+        </Container>      
     );
 };
-
 export default HouseRentPart;

@@ -31,7 +31,7 @@ const Footer = () => {
         {name: "question 24/7."}
     ]
     return (
-        <footer id='contact' className="footer-area clear-both">
+        <footer id='contact' className="footer-area clear-both mt-4">
             <div className="container pt-5">
                 <div className="row py-5">
                     <img src="" alt=""/>

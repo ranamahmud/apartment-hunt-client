@@ -11,7 +11,7 @@ const HouseRentPartCard = (houseData) => {
                                         <img src={thumbnailImage && img} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <h4 style={{ color: "#275A53" }} className="card-title font-weight-bold">{serviceTitle} </h4>
-                                            <small className="card-text text-muted"><strong><img height="20px" src={"https://i.ibb.co/PQDqSBF/placeholder.png"} alt="" />  </strong>Location</small>
+                                            <small className="card-text text-muted"><strong><img height="20px" src={"https://i.ibb.co/PQDqSBF/placeholder.png"} alt="" />  </strong>{location}</small>
                                             <div className="d-flex justify-content-between">
                                                 <small className="card-text text-muted"><strong><img height="20px" src={"https://i.ibb.co/t38Zndb/bed.png"} alt="" /> </strong>Bedroom</small>
                                                 <small className="card-text text-muted"><strong><img height="20px" src={"https://i.ibb.co/1GCwvKP/bathtub.png"} alt="" /> </strong>Bathroom</small>
