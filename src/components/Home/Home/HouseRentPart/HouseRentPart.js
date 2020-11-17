@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import HouseRentPartCard from './HouseRentPartCard';
-import { Card, Col, Container, Row,CardDeck } from 'react-bootstrap';
+import {  Col, Container, Row } from 'react-bootstrap';
 
 const HouseRentPart = () => {
     const [houseRent,setHouseRent] = useState([]);

@@ -1,3 +1,5 @@
+@import "../../../App.scss";
+
 .form-label{
    height: 24px;
    font-family: Poppins;
@@ -5,8 +7,6 @@
    font-weight: 500;
    font-size: 16px;
    line-height: 24px;
-   /* identical to box height */
-
 
    color: #232323;
 }
@@ -33,10 +33,6 @@
     
 }
 
-#upload-btn-img p {
-    padding-top: 18px;
-    padding-left: 48px;
-}
 
 #upload-btn-img::after {
     visibility: hidden;
@@ -47,14 +43,13 @@
 }
 
 #add-btn {
-    background: #275A53 !important;
+    background:$button-background !important;
     width: 108px;
     height: 37px;
     border: 1px solid green;
     border-radius: 5px;
     margin-top: 20px;
     margin-left: 300px;
-
 }
 
 #thumbnail-text{
@@ -64,6 +59,5 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-
     color: #000000;
 }
