@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 const HomeDetails = () => {
 
     const [houseRent,setHouseRent] = useState([]);
+    console.log(houseRent);
 
     useEffect(() => {
         fetch("https://apartment-hunt1.herokuapp.com/getAllHouses")
@@ -42,7 +43,7 @@ const HomeDetails = () => {
                        <div className="d-flex justify-content-between">
 
                            <div className="font-weight-bold">
-                               Family Apartment Three
+                              {houseRent.serviceTitle} {/* Family Apartment Three */}
                            </div>
                            <div className="font-weight-bold"> $256 </div>
                        </div>
