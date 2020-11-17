@@ -56,8 +56,8 @@ const Login = () => {
             setLoading(false)
             if (res.error) {
               setUserInfo({ ...userInfo, errors: res })
-              setLoggedInUser(userInfo)
             } else {
+              setLoggedInUser(res)
               history.replace(from)
             }
           })
@@ -86,7 +86,7 @@ const Login = () => {
           setUserInfo({ ...userInfo, errors: res })
 
         } else {
-          setLoggedInUser(userInfo)
+          setLoggedInUser(res)
           history.replace(from)
         }
       })

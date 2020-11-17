@@ -1,8 +1,29 @@
-import React from 'react';
-import { Image, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Button, Image, Nav, Navbar } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import "./AdminHeader.scss"
+import "firebase/auth";
+import firebase from "firebase/app";
+import firebaseConfig from '../../Login/firebase.config';
 const AdminHeader = ({ title }) => {
+    const history = useHistory();
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    console.log({ loggedInUser })
+
+    const logout = () => {
+
+        if (firebase.apps.length === 0) {
+            firebase.initializeApp(firebaseConfig);
+        }
+        firebase.auth().signOut().then(function () {
+            // Sign-out successful.
+            setLoggedInUser(null)
+            history.replace('/');
+        }).catch(function (error) {
+            // An error happened.
+        });
+    }
     return (
         <div>
             <Navbar expand="lg">
@@ -23,7 +44,24 @@ const AdminHeader = ({ title }) => {
                     <Nav className="ml-auto">
                         <Nav.Link href="#home" id="admin-name">Sufi Ahmed</Nav.Link>
                     </Nav>
+                    {
 
+                        (loggedInUser && loggedInUser.email) &&
+                        <>
+                            <Button variant="dark" id="login-btn" onClick={logout}
+                                style={{ height: "40px" }}
+                            >Logout</Button>
+                            <Link className="nav-link text-white" to="booking-list">
+                                <Button
+                                    style={{
+                                        marginTop: "-7px"
+                                    }}
+                                    id="dash-btn" variant="dark" >Dashboard</Button>
+                            </Link>
+                        </>
+
+
+                    }
                 </Navbar.Collapse>
             </Navbar>
         </div>

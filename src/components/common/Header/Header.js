@@ -47,9 +47,14 @@ const Header = () => {
 
                         (loggedInUser && loggedInUser.email) ?
                             <>
-                                <Button variant="dark" id="login-btn" onClick={logout}>Logout</Button>
+                                <Button variant="dark" id="login-btn" onClick={logout}
+                                    style={{ height: "40px" }}
+                                >Logout</Button>
                                 <Link className="nav-link text-white" to="booking-list">
                                     <Button
+                                        style={{
+                                            marginTop: "-7px"
+                                        }}
                                         id="dash-btn" variant="dark" >Dashboard</Button>
                                 </Link>
                             </>
