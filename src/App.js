@@ -32,9 +32,9 @@ function App() {
           <Route path="/home-details/:id" component={HomeDetails} />
           <Route path="/login" component={Login} />
           <Route path="/create-account" component={CreateAccount} />
-          <PrivateRoute path="/booking-list" component={BookingList} />
-          <PrivateRoute path="/add-rent" component={AddRentHouse} />
-          <PrivateRoute path="/my-rent" component={MyRent} />
+          <Route path="/booking-list" component={BookingList} />
+          <Route path="/add-rent" component={AddRentHouse} />
+          <Route path="/my-rent"><MyRent /></Route>
 
         </Switch>
       </Router >
