@@ -3,7 +3,7 @@ import { UserContext } from '../../../App';
 import AdminHeader from '../../common/AdminHeader/AdminHeader';
 import AdminSidebar from '../../common/AdminSidebar/AdminSidebar';
 import { useAlert } from 'react-alert'
-
+import './BookingList.css'
 const BookingList = () => {
     const alert = useAlert()
     const [userService, setUserService] = useState([])
@@ -27,20 +27,21 @@ const BookingList = () => {
     // https://apartment-hunt1.herokuapp.com/getAllBookings/def@gmail.com
 
     const updateOrder = (id, status) => {
+        console.log({ status })
         const order = { status };
-        fetch('https://apartment-hunt1.herokuapp.com/getAllBookings/' + id, {
+        fetch('http://localhost:5000/changeorderstatus/' + id, {
+            // fetch('https://apartment-hunt1.herokuapp.com/changeorderstatus/' + id, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(order)
         })
             .then(res => res.json()) // or res.json()
             .then(result => {
+                console.log({ result })
                 if (result) {
-                    // reload orders
-                    alert.success('Order Status updated successfully.')
-                    // loadOrders();
+                    alert.success('Booking Status updated successfully.')
                 } else {
-                    alert.error('Order Status updated failed.')
+                    alert.error('Booking Status updated failed.')
                 }
             })
 
@@ -55,7 +56,7 @@ const BookingList = () => {
                 <div className="row">
 
                     <table className="table table-borderless">
-                        <div id="service-header">
+                        <div id="booking-header">
                             <thead>
                                 <tr>
                                     <th className="text-secondary" scope="col">Name</th>
