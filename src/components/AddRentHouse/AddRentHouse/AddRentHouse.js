@@ -7,7 +7,7 @@ import "./AddRentHouse.css"
 const AddRentHouse = () => {
     const alert = useAlert()
     const [serviceInfo, setInfo] = useState({});
-    const [file, setFile] = useState(null);
+    const [thumbnail, setThumbnail] = useState(null);
     const handleBlur = e => {
         const newServiceInfo = { ...serviceInfo };
         newServiceInfo[e.target.name] = e.target.value;
@@ -16,16 +16,17 @@ const AddRentHouse = () => {
 
     const handleFileChange = (e) => {
         const newFile = e.target.files[0];
-        setFile(newFile);
+        setThumbnail(newFile);
     }
 
     const handleSubmit = (e) => {
+        console.log("clicked")
         const formData = new FormData()
-        if (file === null) {
+        if (thumbnail === null) {
             alert.error('You must select a image file')
 
         } else {
-            formData.append('file', file);
+            formData.append('thumbnail', thumbnail);
             formData.append('serviceTitle', serviceInfo.serviceTitle);
             formData.append('price', serviceInfo.price);
             formData.append('email', serviceInfo.email);
@@ -40,7 +41,7 @@ const AddRentHouse = () => {
                 .then(data => {
                     if (data) {
                         alert.success('Service Added Successfully!')
-                        document.querySelector('#add-service').reset()
+                        document.querySelector('#add-house').reset()
                     }
 
                 })
@@ -50,6 +51,7 @@ const AddRentHouse = () => {
                 })
 
         }
+        console.log({ serviceInfo })
         console.log({ formData });
         e.preventDefault()
     }
