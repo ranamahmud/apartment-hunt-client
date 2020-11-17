@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,6 +16,7 @@ import BookingList from './components/BookingList/BookingList/BookingList';
 import AddRentHouse from './components/AddRentHouse/AddRentHouse/AddRentHouse';
 import MyRent from './components/MyRent/MyRent/MyRent';
 import { createContext, useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -33,7 +34,7 @@ function App() {
           <Route path="/create-account" component={CreateAccount} />
           <Route path="/booking-list" component={BookingList} />
           <Route path="/add-rent" component={AddRentHouse} />
-          <Route path="/my-rent" component={MyRent} />
+          <Route path="/my-rent"><MyRent /></Route>
 
         </Switch>
       </Router >
