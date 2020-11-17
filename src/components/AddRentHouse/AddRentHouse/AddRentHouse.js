@@ -3,7 +3,7 @@ import { useAlert } from 'react-alert';
 import { Image, Form, Col, Row } from 'react-bootstrap';
 import AdminHeader from '../../common/AdminHeader/AdminHeader';
 import AdminSidebar from '../../common/AdminSidebar/AdminSidebar';
-import "./AddRentHouse.css"
+import "./AddRentHouse.scss"
 const AddRentHouse = () => {
     const alert = useAlert()
     const [serviceInfo, setInfo] = useState({});

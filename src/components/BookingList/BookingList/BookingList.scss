@@ -1,18 +1,7 @@
-/* table.table.table-borderless {
-    background: white;
-    margin-top: 18px;
-    margin-left: 31px;
-    margin-right: 60px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
+@import "../../../App.scss";
 
-} */
 #booking-header{
-    background: #F5F6FA;
+    background:$table-header-color;
     border-radius: 13px;
     padding-top: 5px;
     padding-left: 20px;
@@ -24,10 +13,7 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
-  /* identical to box height */
   color: #686868;
-
-    /* border-collapse: separate !important; */
 }
  
 #booking-header th {

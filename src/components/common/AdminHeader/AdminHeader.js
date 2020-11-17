@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import "./AdminHeader.css"
+import "./AdminHeader.scss"
 const AdminHeader = ({ title }) => {
     return (
         <div>

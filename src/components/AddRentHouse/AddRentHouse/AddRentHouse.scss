@@ -1,3 +1,5 @@
+@import "../../../App.scss";
+
 .form-label{
    height: 24px;
    font-family: Poppins;
@@ -47,7 +49,7 @@
 }
 
 #add-btn {
-    background: #275A53 !important;
+    background:$button-background !important;
     width: 108px;
     height: 37px;
     border: 1px solid green;

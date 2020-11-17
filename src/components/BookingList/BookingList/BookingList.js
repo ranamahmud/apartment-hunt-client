@@ -3,7 +3,7 @@ import { UserContext } from '../../../App';
 import AdminHeader from '../../common/AdminHeader/AdminHeader';
 import AdminSidebar from '../../common/AdminSidebar/AdminSidebar';
 import { useAlert } from 'react-alert'
-import './BookingList.css'
+import './BookingList.scss'
 const BookingList = () => {
     const alert = useAlert()
     const [userService, setUserService] = useState([])
