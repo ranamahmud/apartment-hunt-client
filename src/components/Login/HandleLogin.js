@@ -75,11 +75,11 @@ export const handleGoogleSignIn = () => {
     .auth()
     .signInWithPopup(googleProvider)
     .then((res) => {
-      const { displayName, email, photoURL, emailVerified } = res.user;
+      const { name, email, photo, emailVerified } = res.user;
       const user = {
-        name: displayName,
+        name: name,
         email: email,
-        photo: photoURL,
+        photo: photo,
         emailVerified,
       };
       return user;
@@ -142,7 +142,7 @@ const verifyEmail = () => {
   var user = firebase.auth().currentUser;
   user
     .sendEmailVerification()
-    .then(function () {})
+    .then(function () { })
     .catch((error) => {
       console.log(error);
     });

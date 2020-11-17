@@ -2,11 +2,7 @@ import './App.scss';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation
+  Route
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import HomeDetails from './components/HomeDetails/HomeDetails/HomeDetails';
