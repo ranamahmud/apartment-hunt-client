@@ -3,10 +3,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation
+  // Link,
+  // Redirect,
+  // useHistory,
+  // useLocation
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import HomeDetails from './components/HomeDetails/HomeDetails/HomeDetails';
@@ -34,7 +34,6 @@ function App() {
           <Route path="/booking-list" component={BookingList} />
           <Route path="/add-rent" component={AddRentHouse} />
           <Route path="/my-rent" component={MyRent} />
-
         </Switch>
       </Router >
     </UserContext.Provider>

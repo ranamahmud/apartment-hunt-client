@@ -1,12 +1,14 @@
 import React from 'react';
 
 const HomeDetailsList = (houseData) => {
+    console.log(houseData);
+    const {serviceTitle,price,thumbnailImage} = houseData.houseData;
     
     return (
         <div className="d-flex justify-content-center flex-column container">
 
                <div className="d-flex justify-content-center align-items-center" style={{
-                   backgroundImage: "url(" + "https://i.ibb.co/G22M5pT/te.png" + ")",
+                   backgroundImage: "url(" + thumbnailImage.img + ")",
                    width: '100%',
                    height: 180,
                    backgroundPosition: 'center',
@@ -30,9 +32,9 @@ const HomeDetailsList = (houseData) => {
                        <div className="d-flex justify-content-between">
 
                            <div className="font-weight-bold">
-                              {houseData.serviceTitle} {/* Family Apartment Three */}
+                              {serviceTitle} {/* Family Apartment Three */}
                            </div>
-                           <div className="font-weight-bold"> $256 </div>
+                           <div className="font-weight-bold"> ${price} </div>
                        </div>
                    </div>
                    <div className="mt-3" style={{width: "35%"}}>

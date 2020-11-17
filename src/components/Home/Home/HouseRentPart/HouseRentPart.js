@@ -1,28 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import HouseRentPartCard from './HouseRentPartCard';
+import { Card, Col, Container, Row,CardDeck } from 'react-bootstrap';
 
 const HouseRentPart = () => {
+    const [houseRent,setHouseRent] = useState([]);
+    const [loading,setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch("https://apartment-hunt1.herokuapp.com/getAllHouses")
+          .then((response) => response.json())
+          .then((data) => {
+            setHouseRent(data);
+          }).finally(() => {
+              setLoading(false)
+          })
+      }, []);
+
     return (
-        <div className="col-md-4 col-sm-12 mt-2 mb-2">
-            <div className="card-deck">
-                <div className="card">
-                    <img src={"https://i.ibb.co/YbmXsFW/service-1.png"} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                        <h4 style={{ color: "#275A53" }} className="card-title font-weight-bold">Three Rooms </h4>
-                        <small className="card-text text-muted"><strong><img height="20px" src={"https://i.ibb.co/YbmXsFW/service-1.png"} alt="" />  </strong></small>
-                        <div className="d-flex justify-content-between">
-                            <small className="card-text text-muted"><strong><img height="20px" src={"https://i.ibb.co/YbmXsFW/service-1.png"} alt="" /> </strong></small>
-                            <small className="card-text text-muted"><strong><img height="20px" src={"https://i.ibb.co/YbmXsFW/service-1.png"} alt="" /> </strong></small>
-                        </div>
-                    </div>
-                    <div className="card-footer">
-                        <div className="d-flex justify-content-between">
-                            <h4 className="font-weight-bold" style={{ color: "#16322E!important" }}>$234</h4>
-                            <button className="btn button">View Details</button>
-                        </div>
+
+        <Container>
+                <div>
+            <Row >
+                <Col sm={8} xl={5} md="8" className ='pb-5 m-auto text-center text-success '>
+                    <h6>House Rent</h6>
+                    <h2>  Discover the latest Rent
+                        available today</h2>
+                </Col>
+            </Row>
+                    <div>
+                    {(loading === false ? (<div>
+            {houseRent.map((houseData) => (
+                    <HouseRentPartCard key={houseData._id} houseData={houseData}>
+                       
+                    </HouseRentPartCard>
+                ))}
+                </div>): (<div>
+                    <h6 className = 'text-center'>Loading</h6>
+                </div>))}
                     </div>
                 </div>
-            </div>
-        </div>
+        </Container>
+    
+    
+
+       
+ 
+
+        
     );
 };
 

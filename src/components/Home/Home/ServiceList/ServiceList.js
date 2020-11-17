@@ -14,8 +14,10 @@ const Service = () => {
             <Row>
                 
                 <CardDeck   className="text-center ">
-                    <Card>
-                        <Card.Img  style={{width:'155px',height:'155px'}} variant="top" src={"https://i.ibb.co/YbmXsFW/service-1.png"} />
+                    <Card >
+                        <div className ='d-flex justify-content-center'>
+                            <Card.Img  style={{width:'155px',height:'155px'}} variant="top" src={"https://i.ibb.co/YbmXsFW/service-1.png"} />
+                        </div>
                         <Card.Body>
                             <Card.Title>Wide Range of Properties</Card.Title>
                             <Card.Text>
@@ -27,7 +29,9 @@ const Service = () => {
                         
                     </Card>
                     <Card>
+                    <div className ='d-flex justify-content-center'>
                         <Card.Img style={{width:'155px',height:'155px'}} variant="top" src={"https://i.ibb.co/85bwbCT/service-2.png"}/>
+                    </div>
                         <Card.Body>
                             <Card.Title>Financing Made Easy</Card.Title>
                             <Card.Text>
@@ -39,7 +43,9 @@ const Service = () => {
                         
                     </Card>
                     <Card>
-                        <Card.Img style={{width:'155px',height:'155px'}} src={"https://i.ibb.co/rFVqrV9/service-3.png"} />
+                        <div className ='d-flex justify-content-center'>
+                            <Card.Img style={{width:'155px',height:'155px'}} src={"https://i.ibb.co/rFVqrV9/service-3.png"} />
+                        </div>
                         <Card.Body>
                             <Card.Title>Trusted by Thousands</Card.Title>
                             <Card.Text>
