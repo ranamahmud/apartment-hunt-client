@@ -30,12 +30,13 @@ const HouseRentPart = () => {
                     <div>
                             {(loading === false ? 
                                 (
-                                    <div> 
+                                    <div className = "row"> 
+                                        
                                         {houseRent.map((houseData) => (
                                             <HouseRentPartCard key={houseData._id} houseData={houseData}>
                                             </HouseRentPartCard>
                                         ))}
-                                </div>
+                                    </div>
                             
                             ): (<div>
                                 <h6 className = 'text-center'>Loading</h6>
