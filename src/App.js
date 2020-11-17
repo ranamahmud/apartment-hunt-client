@@ -30,8 +30,7 @@ function App() {
           <Route path="/create-account" component={CreateAccount} />
           <Route path="/booking-list" component={BookingList} />
           <Route path="/add-rent" component={AddRentHouse} />
-          <Route path="/my-rent"><MyRent /></Route>
-
+          <Route path="/my-rent" component={MyRent} />
         </Switch>
       </Router >
     </UserContext.Provider>

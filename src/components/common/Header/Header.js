@@ -24,15 +24,8 @@ const Header = () => {
         });
     }
     return (
-        <Navbar expand="lg">
-            <Link className="nav-link" to="/">
-                <Image fluid src={require('../../../images/logos/logo.png').default}
-                    style={{
-                        width: "100px",
-                        height: "54.8px"
-                    }}
-                />
-            </Link>
+        <Navbar bg="light" expand="lg">
+            <Navbar.Brand href="#home"><img style={{ width:'70px', height:'40px'}} src={'https://i.ibb.co/cwCqpM1/Logo.png'} alt=""/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">

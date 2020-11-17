@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import HomeDetailsList from './HomeDetailsList';
 
 const HomeDetails = () => {
 
