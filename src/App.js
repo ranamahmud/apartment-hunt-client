@@ -16,6 +16,7 @@ import BookingList from './components/BookingList/BookingList/BookingList';
 import AddRentHouse from './components/AddRentHouse/AddRentHouse/AddRentHouse';
 import MyRent from './components/MyRent/MyRent/MyRent';
 import { createContext, useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -31,9 +32,9 @@ function App() {
           <Route path="/home-details/:id" component={HomeDetails} />
           <Route path="/login" component={Login} />
           <Route path="/create-account" component={CreateAccount} />
-          <Route path="/booking-list" component={BookingList} />
-          <Route path="/add-rent" component={AddRentHouse} />
-          <Route path="/my-rent" component={MyRent} />
+          <PrivateRoute path="/booking-list" component={BookingList} />
+          <PrivateRoute path="/add-rent" component={AddRentHouse} />
+          <PrivateRoute path="/my-rent" component={MyRent} />
 
         </Switch>
       </Router >

@@ -30,8 +30,7 @@ const BookingList = () => {
     const updateOrder = (id, status) => {
         console.log({ status })
         const order = { status };
-        fetch('http://localhost:5000/changeorderstatus/' + id, {
-            // fetch('https://apartment-hunt1.herokuapp.com/changeorderstatus/' + id, {
+        fetch('https://apartment-hunt1.herokuapp.com/changeorderstatus/' + id, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(order)
