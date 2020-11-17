@@ -9,6 +9,7 @@ const BookingList = () => {
     const [userService, setUserService] = useState([])
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     useEffect(() => {
+        // need fixes
         fetch('https://apartment-hunt1.herokuapp.com/getAllBookings/')
             .then(res => res.json())
             .then(data => setUserService(data))
