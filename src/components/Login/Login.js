@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
-import { useHistory, useLocation } from 'react-router-dom';
+import {Redirect, useHistory, useLocation } from 'react-router-dom';
 import FadeLoader from "react-spinners/FadeLoader";
 import handleError from './ErrorHandler';
 import InputItem from './InputItem';
@@ -43,7 +43,7 @@ const Login = () => {
           if (res.error) {
             setUserInfo({ ...userInfo, errors: res })
           } else {
-
+            setLoggedInUser({...res})
             history.replace(from)
           }
         })
@@ -57,7 +57,7 @@ const Login = () => {
             if (res.error) {
               setUserInfo({ ...userInfo, errors: res })
             } else {
-              setLoggedInUser(res)
+              setLoggedInUser({...res})
               history.replace(from)
             }
           })
@@ -73,7 +73,7 @@ const Login = () => {
         if (res.error) {
           setUserInfo({ ...userInfo, errors: res })
         } else {
-          setLoggedInUser(res)
+          setLoggedInUser({...res})
           history.replace(from)
         }
       })
@@ -86,8 +86,8 @@ const Login = () => {
           setUserInfo({ ...userInfo, errors: res })
 
         } else {
-          setLoggedInUser(res)
-          history.replace(from)
+          setLoggedInUser({...res})
+              history.replace(from)
         }
       })
 
@@ -102,7 +102,9 @@ const Login = () => {
     console.log('form login');
   }, [])
   const { firstName, lastName, email, password, confirmPassword, errors } = userInfo;
-
+  // if(loggedInUser){
+  //   return <Redirect to ='/'/>
+  // }
 
 
   if (loading) {
@@ -127,7 +129,7 @@ const Login = () => {
                 {newUser && (
                   <InputItem value={firstName}
                     onChangeHandler={onChangeHandler}
-                    // error={errors.firstName}
+                    error={errors.firstName}
                     name="firstName"
                     customClass="loginInput" autoFocus
                     placeholder="First Name" />
@@ -135,21 +137,21 @@ const Login = () => {
                 {newUser && (
                   <InputItem value={lastName}
                     onChangeHandler={onChangeHandler}
-                    // error={errors.lastName}
+                    error={errors.lastName}
                     name="lastName"
                     customClass="loginInput"
                     placeholder="Last Name" />
                 )}
                 <InputItem value={email}
                   onChangeHandler={onChangeHandler}
-                  // error={errors.email}
+                  error={errors.email}
                   name="email"
                   customClass="loginInput"
                   type="email"
                   placeholder="Email" />
                 <InputItem value={password}
                   onChangeHandler={onChangeHandler}
-                  // error={errors.password}
+                  error={errors.password}
                   name="password"
                   type="password"
                   customClass="loginInput"
@@ -158,16 +160,16 @@ const Login = () => {
                   <InputItem value={confirmPassword}
                     onChangeHandler={onChangeHandler}
                     type="password"
-                    // error={errors.confirmPassword}
+                    error={errors.confirmPassword}
                     name="confirmPassword"
                     customClass="loginInput"
                     placeholder="Confirm Password" />
                 )}
-                {/* {errors.error && (
+                {errors.error && (
                   <p className="text-danger text-center  py-2">
                     {errors.error}
                   </p>
-                )} */}
+                )}
                 <Button className="w-100" variant="success" type="submit">
                   {newUser ? 'Create an Account' : 'Login'}
                 </Button>

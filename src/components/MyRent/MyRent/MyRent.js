@@ -44,8 +44,6 @@ const MyRent = () => {
                                             <td style={{ width: "300px" }}>{house.serviceTitle}</td>
                                             <td style={{ width: "300px" }}>{"$" + house.price}</td>
                                             <td style={{ width: "300px" }}>View Details</td>
-
-
                                         </tr>
                                     )
                                 }

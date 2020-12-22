@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { UserContext } from '../../../App';
-import "./AdminHeader.scss"
+import "./AdminHeader.scss";
 import "firebase/auth";
 import firebase from "firebase/app";
 import firebaseConfig from '../../Login/firebase.config';
@@ -59,8 +59,6 @@ const AdminHeader = ({ title }) => {
                                     id="dash-btn" variant="dark" >Dashboard</Button>
                             </Link>
                         </>
-
-
                     }
                 </Navbar.Collapse>
             </Navbar>

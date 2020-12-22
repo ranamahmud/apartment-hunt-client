@@ -32,7 +32,7 @@ function App() {
           <Route path="/add-rent" component={AddRentHouse} />
           <Route path="/my-rent" component={MyRent} />
         </Switch>
-      </Router >
+      </Router>
     </UserContext.Provider>
   );
 }

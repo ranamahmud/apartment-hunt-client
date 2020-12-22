@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import HouseRentPartCard from './HouseRentPartCard';
 import {  Col, Container, Row } from 'react-bootstrap';
+import loadingPic from './unnamed-1.gif';
 
 const HouseRentPart = () => {
     const [houseRent,setHouseRent] = useState([]);
@@ -8,13 +9,14 @@ const HouseRentPart = () => {
 
     useEffect(() => {
         fetch("https://apartment-hunt1.herokuapp.com/getAllHouses")
-          .then((response) => response.json())
-          .then((data) => {
+            .then((response) => response.json())
+            .then((data) => {
             setHouseRent(data);
-          }).finally(() => {
-              setLoading(false)
-          })
-      }, []);
+            console.log(data);
+            }).finally(() => {
+                setLoading(false)
+            })
+        }, []);
 
     return (
 
@@ -23,7 +25,7 @@ const HouseRentPart = () => {
             <Row >
                 <Col sm={8} xl={5} md="8" className ='pb-5 m-auto text-center text-success '>
                     <h6>House Rent</h6>
-                    <h2>  Discover the latest Rent
+                    <h2>Discover the latest Rent
                         available today</h2>
                 </Col>
             </Row>
@@ -38,8 +40,9 @@ const HouseRentPart = () => {
                                         ))}
                                     </div>
                             
-                            ): (<div>
-                                <h6 className = 'text-center'>Loading</h6>
+                            ): (<div className="d-flex justify-content-center fp-loader">
+                                {/* <h6 className = 'text-center'>Loading</h6> */}
+                                <img  src={loadingPic} alt=""/>
                         </div>))}
                     </div>
                 </div>

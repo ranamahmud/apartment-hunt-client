@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import HomeDetailsList from './HomeDetailsList';
+import { useParams } from 'react-router-dom';
+// import HomeDetailsList from './HomeDetailsList';
 
 const HomeDetails = () => {
 
     const [houseRent, setHouseRent] = useState([]);
+    const {serviceTitle,price,thumbnailImage,img,location} = houseRent;
+    const {id} = useParams();
+    // console.log(id);
 
     useEffect(() => {
-        fetch("https://apartment-hunt1.herokuapp.com/getAllHouses")
+        fetch(`https://apartment-hunt1.herokuapp.com/getAllHouses/${id}`)
             .then((response) => response.json())
             .then((response) => {
                 console.log(response);
                 setHouseRent(response);
+            })
+            .catch((error) => {
+                console.log(error);
             });
+            
     }, []);
 
     return (
@@ -43,9 +51,9 @@ const HomeDetails = () => {
                         <div className="d-flex justify-content-between">
 
                             <div className="font-weight-bold">
-                                Family Apartment Three
+                                {serviceTitle}
                            </div>
-                            <div className="font-weight-bold"> $256 </div>
+                            <div className="font-weight-bold"> Price: ${houseRent.price} </div>
                         </div>
                     </div>
                     <div className="mt-3" style={{ width: "35%" }}>
