@@ -2,6 +2,14 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebase.config";
 
+const setUserToken = () => {
+    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+      sessionStorage.setItem("token",idToken );
+      }).catch(function(error) {
+        // Handle error
+      });
+}
+
 export const initializeFirebase = () => {
   if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
@@ -26,6 +34,7 @@ export const createUserWithEmailAndPassword = ({
       };
       updateUserName(name);
       verifyEmail();
+      setUserToken();
       return singedInUser;
     })
     .catch((error) => {
@@ -54,6 +63,7 @@ export const signInWithEmailAndPassword = ({ email, password }) => {
       if (!emailVerified) {
         verifyEmail();
       }
+      setUserToken();
       return user;
     })
     .catch((error) => {
@@ -82,6 +92,8 @@ export const handleGoogleSignIn = () => {
         photo: photo,
         emailVerified,
       };
+      setUserToken();
+      
       return user;
     })
     .catch((error) => {
@@ -103,6 +115,7 @@ export const handleFacebookSignIn = () => {
         photo: photoURL,
         emailVerified,
       };
+      setUserToken();
       return user;
     })
     .catch((error) => {

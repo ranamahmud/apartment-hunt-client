@@ -42,6 +42,7 @@ const HouseRentPart = () => {
                             
                             ): (<div className="d-flex justify-content-center fp-loader">
                                 {/* <h6 className = 'text-center'>Loading</h6> */}
+                                <h2 className = 'text-center'>Loading</h2>
                                 <img  src={loadingPic} alt=""/>
                         </div>))}
                     </div>

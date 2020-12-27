@@ -55,7 +55,6 @@ const Header = () => {
                             <Link className="nav-link text-white" to="/login">
                                 <Button variant="dark" id="login-btn">Login</Button>
                             </Link>
-
                     }
                 </Nav>
 

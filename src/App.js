@@ -22,10 +22,13 @@ function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/home-details/:id" component={HomeDetails} />
+ 
+          <PrivateRoute  path="/home-details/:id">
+            <HomeDetails></HomeDetails>
+          </PrivateRoute>
+          
           <Route path="/login" component={Login} />
           <Route path="/create-account" component={CreateAccount} />
           <Route path="/booking-list" component={BookingList} />

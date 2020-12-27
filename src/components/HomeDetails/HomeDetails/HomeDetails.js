@@ -62,7 +62,7 @@ const HomeDetails = () => {
                                 <input type="text" placeholder="Full Name" className="form-control mb-3" />
                                 <input type="text" placeholder="Phone No" className="form-control mb-3" />
                                 <input type="text" placeholder="Email Address" className="form-control mb-3" />
-                                <textarea name="message" id="message" cols="20" rows="10" placeholder="Message" className="form-control mb-4">salam </textarea>
+                                <textarea name="message" id="message" cols="20" rows="10" placeholder="Message" className="form-control mb-4"></textarea>
                                 <button className="btn btn-secondary form-control mb-4"> Request Booking </button>
                             </form>
                         </div>

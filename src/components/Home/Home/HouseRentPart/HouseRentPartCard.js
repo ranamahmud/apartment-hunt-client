@@ -21,7 +21,7 @@ const HouseRentPartCard = (houseData) => {
                                             <div className="d-flex justify-content-between">
                                                 <h4 className="font-weight-bold" style={{ color: "#16322E!important" }}> ${price}</h4>
                                                 <Link to={`/home-details/${_id}`}>
-                                                <button  className="btn btn-success">Details</button>
+                                                    <button  className="btn btn-success">Details</button>
                                                 </Link>
                                             </div>
                                         </div>
