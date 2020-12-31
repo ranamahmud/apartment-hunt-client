@@ -12,7 +12,7 @@ const HouseRentPart = () => {
             .then((response) => response.json())
             .then((data) => {
             setHouseRent(data);
-            console.log(data);
+            
             }).finally(() => {
                 setLoading(false)
             })

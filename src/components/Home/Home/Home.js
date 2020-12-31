@@ -8,7 +8,7 @@ import ServiceList from './ServiceList/ServiceList';
 const Home = () => {
     return (
         <div>
-            <Header />
+            <Header/>
             <FindPlacePart/>
             <HouseRentPart/>
             <ServiceList/>
